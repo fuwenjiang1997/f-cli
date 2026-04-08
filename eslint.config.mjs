@@ -12,8 +12,8 @@ export default [
     ignores: ['**/dist', 'node_modules/**', '**/*.d.ts', 'packages/cli/templates'],
   },
   {
-    files: ['**/*.ts', '**/*.js'],
-    // ignores: ['*.js'],
+    files: ['**/*.{ts,js,tsx}'],
+    ignores: ['*.js'],
     plugins: {
       'simple-import-sort': importSort
     },
@@ -29,29 +29,8 @@ export default [
     },
     rules: {
       'no-console': 'error',
+      'no-require-imports': 'off',
+      'no-undef': 'warn',
     }
   }
 ]
-
-// export default tseslint.config({
-//   extends: [js.configs.recommended, ...tseslint.configs.recommended],
-//   files: ['**/*.ts', '**/*.js'],
-//   ignores: ['*.js'],
-//   rules: {
-//     "no-console": "error"
-//   },
-//   languageOptions: {
-//     parser: tseslint.parser,
-//     globals: {
-//       ...globals.node
-//     },
-//     parserOptions: {
-//       project: ['./tsconfig.eslint.json'],
-//       tsconfigRootDir: import.meta.url,
-//     },
-//   },
-//   plugins: {
-//     // '@typescript-eslint': tseslint,
-//     'simple-import-sort': importSort
-//   }
-// })
