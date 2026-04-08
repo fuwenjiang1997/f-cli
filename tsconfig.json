@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "allowJs": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@f-cli/*": [
+        "./packages/@f-cli/*"
+      ]
+    }
+  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Base",
+  "include": [
+    "packages/**/*"
+  ],
+  "exclude": [
+    "packages/cli/templates",
+    "**/dist"
+  ]
+}
