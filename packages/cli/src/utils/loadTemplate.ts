@@ -70,7 +70,7 @@ const loadLocalTemplate = async (options: LoadLocalTemplateOptions) => {
   }).start()
 
   try {
-    const templatePath = join(__dirname, `../../templates/template-${template}`)
+    const templatePath = join(__dirname, `../templates/template-${template}`)
 
     await copy(templatePath, `${process.cwd()}/${projectName}`)
     spinner.text = 'Copy template success'
