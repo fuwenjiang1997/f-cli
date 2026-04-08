@@ -5,34 +5,35 @@
   "author": "fuwenjiang",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "dev:cli": "turbo run dev @f-cli/cli",
     "build:cli": "turbo build @f-cli/cli",
+    "format": "prettier --write \"{packages,apps}/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"{packages,apps}/**/*.{js,jsx,ts,tsx}\" --fix",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
-    "prepare": "husky",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "typecheck": "tsc --noEmit"
   },
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
     "@eslint/js": "10.0.1",
+    "@types/node": "^25.5.2",
     "commitizen": "4.3.1",
     "cspell": "10.0.0",
     "cz-git": "1.12.0",
     "eslint": "10.2.0",
+    "eslint-plugin-simple-import-sort": "13.0.0",
     "globals": "17.4.0",
     "husky": "9.1.7",
+    "lint-staged": "^16.4.0",
+    "madge": "8.0.0",
     "tsup": "8.5.1",
     "turbo": "2.9.5",
     "typescript": "6.0.2",
-    "typescript-eslint": "8.58.1",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^25.5.2",
-    "madge": "8.0.0",
-    "eslint-plugin-simple-import-sort": "13.0.0"
+    "typescript-eslint": "8.58.1"
   },
   "packageManager": "pnpm@10.24.0",
   "config": {
@@ -40,5 +41,14 @@
       "path": "node_modules/cz-git",
       "useEmoji": true
     }
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --cache --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --cache --parser=typescript --write"
+    ]
   }
 }

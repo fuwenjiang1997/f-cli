@@ -1,14 +1,19 @@
-import { Framework, Template } from "types/template";
-import { frameworks, templates } from "constants/templates";
+import { frameworks, reactTemplateChoices, vueTemplateChoices } from '../../constants/templates'
+import { Framework, Template } from '../../types/template'
 
-export const validateFramework = (framework: Framework) => {
-  if (!frameworks.includes(framework)) {
-    throw new Error(`Framework ${framework} is not supported`);
-  }
-};
+export const validateGivenFramework = (framework: Framework) => {
+  return frameworks.includes(framework)
+}
 
-export const validateTemplate = (template: Template) => {
-  if (!templates.includes(template)) {
-    throw new Error(`Template ${template} is not supported`);
+export const validateGivenTemplate = (framework: Framework, template: Template) => {
+  switch (framework) {
+    case 'vue':
+      return vueTemplateChoices.map(({ value }) => value).includes(template)
+    case 'react':
+      return reactTemplateChoices.map(({ value }) => value).includes(template)
+    // case 'vanilla':
+    //   return vanillaTemplateChoices.map(({value}) => value).includes(template)
+    default:
+      return false
   }
-};
+}

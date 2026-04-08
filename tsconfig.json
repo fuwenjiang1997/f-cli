@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "lib": [
       "DOM",
       "ESNext"
     ],
     "allowJs": true,
-    "module": "commonjs",
+    "module": "nodenext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "strict": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "paths": {
       "@f-cli/*": [
         "./packages/@f-cli/*"

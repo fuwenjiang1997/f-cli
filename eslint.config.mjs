@@ -9,11 +9,10 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['**/dist', 'node_modules/**', '**/*.d.ts', 'packages/cli/templates'],
+    ignores: ['*.js', '**/*/dist/**/*', 'packages/cli/templates/**/*'],
   },
   {
-    files: ['**/*.{ts,js,tsx}', "*.cjs"],
-    ignores: ['*.js'],
+    files: ['**/*.{ts,js,tsx}'],
     plugins: {
       'simple-import-sort': importSort
     },
@@ -28,9 +27,29 @@ export default [
       },
     },
     rules: {
-      'no-console': 'error',
-      'no-require-imports': 'off',
+      // 'no-console': 'error',
+      // 'no-require-imports': 'off',
+      // 'no-undef': 'warn',
+
+      '@typescript-eslint/array-type': 'error',
+      '@typescript-eslint/no-for-in-array': 'error',
+      'no-unused-vars': 'off',
       'no-undef': 'warn',
+      'no-console': 'error',
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            ['^\\w'],
+            ['^@\\w'],
+            ['^@/'],
+            ['^\\u0000'],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$']
+          ]
+        }
+      ],
+      'simple-import-sort/exports': 'error'
     }
   }
 ]

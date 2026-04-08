@@ -1,8 +1,10 @@
-import { program } from "commander";
-import pkg from "../../package.json";
-import { registerCommands } from "./registerCommands";
-import { create } from "./base/create";
+import { program } from 'commander'
 
-program.version(pkg.version).description(pkg.description);
+import pkg from '../../package.json'
 
-registerCommands(create);
+import { create } from './base/create'
+import { registerCommands } from './registerCommands'
+
+program.version(pkg.version).description(pkg.description)
+
+registerCommands(create)
