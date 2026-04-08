@@ -12,7 +12,7 @@ export default [
     ignores: ['**/dist', 'node_modules/**', '**/*.d.ts', 'packages/cli/templates'],
   },
   {
-    files: ['**/*.{ts,js,tsx}'],
+    files: ['**/*.{ts,js,tsx}', "*.cjs"],
     ignores: ['*.js'],
     plugins: {
       'simple-import-sort': importSort
