@@ -1,0 +1,30 @@
+name: Publish Monorepo Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Publish to Aliyun NPM
+        env:
+          YX_NPM_TOKEN: ${{ secrets.YX_NPM_TOKEN }}
+        run: npm run publish

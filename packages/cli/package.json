@@ -16,7 +16,9 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup --clean --splitting",
-    "publish": "npm publish"
+    "changeset": "changeset",
+    "publish": "changeset publish",
+    "version": "changeset version"
   },
   "devDependencies": {
     "@swc/core": "1.15.24",
