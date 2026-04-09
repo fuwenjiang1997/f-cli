@@ -6,12 +6,17 @@
 
 ## 安装
 
+克隆项目到本地，进入项目目录，执行以下命令安装依赖：
+
 ```sh
-npm install -g @f-cli/cli
+pnpm install
+cd packages/cli
+pnpm link
 ```
 
 ## 使用
 
 ```sh
-f-cli create my-project
+f-cli create my-project #创建项目
+f-cli info #查看cli信息
 ```
