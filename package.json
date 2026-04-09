@@ -14,7 +14,8 @@
     "lint": "eslint \"{packages,apps}/**/*.{js,jsx,ts,tsx}\" --fix",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
     "commit": "git-cz",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publish:npm": "turbo publish-npm"
   },
   "devDependencies": {
     "@commitlint/cli": "20.5.0",
