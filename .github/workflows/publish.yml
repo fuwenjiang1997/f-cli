@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Apply version updates
+        run: pnpm changeset:version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build packages
         run: pnpm build
 
@@ -33,3 +38,10 @@ jobs:
         env:
           YX_NPM_TOKEN: ${{ secrets.YX_NPM_TOKEN }}
         run: pnpm publish:npm
+
+      - name: Commit version changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'ci: version packages'
+          committer_name: GitHub Actions
+          committer_email: actions@github.com

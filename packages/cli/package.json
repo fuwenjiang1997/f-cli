@@ -1,6 +1,6 @@
 {
   "name": "@f-cli/cli",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "f-cli command line interface",
   "author": "fuwenjiang",
   "main": "dist/index.js",
