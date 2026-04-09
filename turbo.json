@@ -9,9 +9,11 @@
       "cache": false,
       "persistent": true
     },
+    "changeset-version": {
+      "dependsOn": []
+    },
     "publish-npm": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "dependsOn": ["build", "changeset-version"]
     }
   },
   "ui": "tui"

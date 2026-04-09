@@ -15,6 +15,7 @@
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
     "commit": "git-cz",
     "typecheck": "tsc --noEmit",
+    "changeset:version": "turbo changeset-version",
     "publish:npm": "turbo publish-npm"
   },
   "devDependencies": {
