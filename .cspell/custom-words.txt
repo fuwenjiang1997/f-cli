@@ -1,4 +1,5 @@
 aliyun
+fcli
 fuwenjiang
 giget
 npmjs
