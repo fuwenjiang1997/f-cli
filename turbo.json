@@ -9,6 +9,15 @@
       "cache": false,
       "persistent": true
     },
+    "test": {
+      "dependsOn": [],
+      "outputs": [],
+      "cache": false
+    },
+    "test:coverage": {
+      "dependsOn": [],
+      "outputs": ["coverage/**"]
+    },
     "changeset-version": {
       "dependsOn": []
     },
