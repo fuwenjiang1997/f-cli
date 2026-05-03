@@ -1,0 +1,6 @@
+{
+  "plugins": [
+    "karpathy-guidelines@git+https://github.com/forrestchang/andrej-karpathy-skills.git",
+    "opencode-best-practices@git+https://github.com/opencode-com/opencode-skills.git"
+  ]
+}
